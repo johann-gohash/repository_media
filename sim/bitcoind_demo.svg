@@ -1,226 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="terminal" baseProfile="full" viewBox="0 0 855 1183" width="855" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="terminal" baseProfile="full" viewBox="0 0 855 1118" width="855" version="1.1">
     <defs>
         <termtosvg:template_settings xmlns:termtosvg="https://github.com/nbedos/termtosvg">
             <termtosvg:screen_geometry columns="101" rows="61"/>
-            <termtosvg:animation type="waapi"/>
+            <termtosvg:animation type="css"/>
         </termtosvg:template_settings>
-        <style type="text/css" id="generated-style"><![CDATA[
-        #screen {
-            font-family: 'DejaVu Sans Mono', monospace;
-            font-style: normal;
-            font-size: 14px;
-        }
+        <style type="text/css" id="generated-style"><![CDATA[#screen {
+                font-family: 'DejaVu Sans Mono', monospace;
+                font-style: normal;
+                font-size: 14px;
+            }
 
         text {
             dominant-baseline: text-before-edge;
             white-space: pre;
         }
-    ]]></style>
+    
+            :root {
+                --animation-duration: 14949ms;
+            }
+
+            @keyframes roll {
+                0.000%{transform:translateY(0px)}
+0.013%{transform:translateY(-1054px)}
+0.020%{transform:translateY(-2108px)}
+0.033%{transform:translateY(-3162px)}
+14.349%{transform:translateY(-4216px)}
+14.376%{transform:translateY(-5270px)}
+14.850%{transform:translateY(-6324px)}
+14.877%{transform:translateY(-7378px)}
+16.924%{transform:translateY(-8432px)}
+16.944%{transform:translateY(-9486px)}
+19.520%{transform:translateY(-10540px)}
+22.617%{transform:translateY(-11594px)}
+26.858%{transform:translateY(-12648px)}
+26.891%{transform:translateY(-13702px)}
+30.878%{transform:translateY(-14756px)}
+30.905%{transform:translateY(-15810px)}
+30.945%{transform:translateY(-16864px)}
+30.992%{transform:translateY(-17918px)}
+92.996%{transform:translateY(-18972px)}
+93.043%{transform:translateY(-20026px)}
+93.090%{transform:translateY(-21080px)}
+93.130%{transform:translateY(-22134px)}
+93.277%{transform:translateY(-23188px)}
+93.311%{transform:translateY(-24242px)}
+100.000%{transform:translateY(-24242px)}
+            }
+
+            #screen_view {
+                animation-duration: 14949ms;
+                animation-iteration-count:infinite;
+                animation-name:roll;
+                animation-timing-function: steps(1,end);
+                animation-fill-mode: forwards;
+            }
+        ]]></style>
         <style type="text/css" id="user-style">
             /* The colors defined below are the default 16 colors used for rendering text of the terminal. Adjust
                them as needed.
                gjm8 color theme (source: https://terminal.sexy/) */
-            .foreground {fill: #c5c5c5;}
-            .background {fill: #1c1c1c;}
-            .color0 {fill: #1c1c1c;}
-            .color1 {fill: #ff005b;}
-            .color2 {fill: #cee318;}
-            .color3 {fill: #ffe755;}
-            .color4 {fill: #048ac7;}
-            .color5 {fill: #833c9f;}
-            .color6 {fill: #0ac1cd;}
-            .color7 {fill: #e5e5e5;}
-            .color8 {fill: #1c1c1c;}
-            .color9 {fill: #ff005b;}
-            .color10 {fill: #cee318;}
-            .color11 {fill: #ffe755;}
-            .color12 {fill: #048ac7;}
-            .color13 {fill: #833c9f;}
-            .color14 {fill: #0ac1cd;}
-            .color15 {fill: #e5e5e5;}
-            #play-button {
-                transform: translate(30px, calc(100% - 45px));
-            }
-            #pause-button {
-                transform: translate(30px, calc(100% - 45px));
-            }
-            #wide_track {
-                transform: translate(150px, calc(100% - 45px));
-            }
-            #track {
-                transform: translate(150px, calc(100% - 33px));
-            }
-            #slider_button {
-                transform: translate(0px, calc(100% - 30px));
-            }
-            #timer {
-                transform: translate(60px, calc(100% - 38px));
-                font-family: 'DejaVu Sans Mono', monospace;
-                font-style: normal;
-                font-size: 14px;
-            }
+            .foreground {fill: #f8f8f2}
+            .background {fill: #272822}
+            .color0 {fill: #272822}
+            .color1 {fill: #f92672}
+            .color2 {fill: #a6e22e}
+            .color3 {fill: #f4bf75}
+            .color4 {fill: #66d9ef}
+            .color5 {fill: #ae81ff}
+            .color6 {fill: #a1efe4}
+            .color7 {fill: #f8f8f2}
+            .color8 {fill: #75715e}
+            .color9 {fill: #fd971f}
+            .color10 {fill: #383830}
+            .color11 {fill: #49483e}
+            .color12 {fill: #a59f85}
+            .color13 {fill: #f5f4f1}
+            .color14 {fill: #cc6633}
+            .color15 {fill: #f9f8f5}
         </style>
-        <rect id="slider_wide_track" height="30px" width="65%"/>
-        <rect id="slider_track" height="6px" width="65%"/>
-        <circle id="slider_button" r="10px" class="color1"/>
-        <g id="icon-play">
-            <rect x="-5" y="0" width="25" height="30" class="background"/>
-            <path d="M0 4l14 11-14 11z"/>
-        </g>
-        <g id="icon-pause">
-            <rect x="-5" y="0" width="25" height="30" class="background"/>
-            <rect x="0" y="5" width="5" height="20"/>
-            <rect x="10" y="5" width="5" height="20"/>
-        </g>
     </defs>
     <rect id="terminalui" class="background" width="100%" height="100%" ry="4.5826941"/>
     <circle cx="24" cy="23" r="7" class="color1"/>
     <circle cx="44" cy="23" r="7" class="color3"/>
     <circle cx="64" cy="23" r="7" class="color2"/>
-    <svg id="screen" width="808" height="1037" x="23" y="50" viewBox="0 0 808 1037" preserveAspectRatio="xMidYMin slice">
-        <rect class="background" height="100%" width="100%" x="0" y="0"/><defs><g id="g1"><text x="0" textLength="376" class="foreground">Welcome to fish, the friendly interactive shell</text></g><g id="g2"><text x="0" textLength="40" class="foreground">Type </text><text x="40" textLength="32" class="color2">help</text><text x="72" textLength="288" class="foreground"> for instructions on how to use fish</text></g><g id="g3"><text x="0" textLength="8" class="background"> </text></g><g id="g4"><text x="0" textLength="808" class="foreground">                                                                                                     </text></g><g id="g5"><text x="0" textLength="8" font-weight="bold" class="color14">~</text><text x="8" textLength="8" class="foreground"> </text></g><g id="g6"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="8" class="background"> </text><text x="24" textLength="784" class="foreground">                                                                                                  </text></g><g id="g7"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="8" fill="#ff0000">g</text><text x="24" textLength="8" class="background">o</text><text x="32" textLength="488" fill="#555555">hash_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g8"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="16" fill="#005fd7">go</text><text x="32" textLength="8" class="background">h</text><text x="40" textLength="480" fill="#555555">ash_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g9"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="24" fill="#ff0000">goh</text><text x="40" textLength="8" class="background">a</text><text x="48" textLength="472" fill="#555555">sh_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g10"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="32" fill="#ff0000">goha</text><text x="48" textLength="8" class="background">s</text><text x="56" textLength="464" fill="#555555">h_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g11"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="40" fill="#ff0000">gohas</text><text x="56" textLength="8" class="background">h</text><text x="64" textLength="456" fill="#555555">_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g12"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="48" fill="#ff0000">gohash</text><text x="64" textLength="8" class="background">_</text><text x="72" textLength="448" fill="#555555">miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g13"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="176" fill="#005fd7">gohash_miner_simulator</text><text x="192" textLength="8" class="foreground"> </text><text x="200" textLength="64" fill="#00afff">bitcoind</text><text x="264" textLength="8" class="foreground"> </text><text x="272" textLength="16" fill="#00afff">-a</text><text x="288" textLength="8" class="foreground"> </text><text x="296" textLength="160" fill="#999900">"edgar_tool:pass123"</text><text x="456" textLength="8" class="foreground"> </text><text x="464" textLength="16" fill="#00afff">-p</text><text x="480" textLength="8" class="foreground"> </text><text x="488" textLength="32" fill="#00afff">4000</text><text x="520" textLength="8" class="background"> </text><text x="528" textLength="280" class="foreground">                                   </text></g><g id="g14"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="176" fill="#005fd7">gohash_miner_simulator</text><text x="192" textLength="8" class="foreground"> </text><text x="200" textLength="64" fill="#00afff">bitcoind</text><text x="264" textLength="8" class="foreground"> </text><text x="272" textLength="16" fill="#00afff">-a</text><text x="288" textLength="8" class="foreground"> </text><text x="296" textLength="160" fill="#999900">"edgar_tool:pass123"</text><text x="456" textLength="8" class="foreground"> </text><text x="464" textLength="16" fill="#00afff">-p</text><text x="480" textLength="8" class="foreground"> </text><text x="488" textLength="32" fill="#00afff">4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g15"><text x="0" textLength="120" class="foreground">bitcoind called</text></g><g id="g16"><text x="0" textLength="464" class="foreground">2022/05/12 18:49:29 Authentication string format is valid.</text></g><g id="g17"><text x="0" textLength="368" class="foreground">2022/05/12 18:49:29 Loading block templates...</text></g><g id="g18"><text x="0" textLength="360" class="foreground">2022/05/12 18:49:29 Starting server with 4000</text></g><g id="g19"><text x="0" textLength="16" class="foreground">^C</text><text x="16" textLength="8" class="background"> </text></g></defs><g id="screen_view"><g><use xlink:href="#g1" y="0"/><use xlink:href="#g2" y="17"/><rect x="0" y="34" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="34"/></g><g><use xlink:href="#g1" y="1054"/><use xlink:href="#g2" y="1071"/><rect x="0" y="1088" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="1088"/></g><g><use xlink:href="#g1" y="2108"/><use xlink:href="#g2" y="2125"/><use xlink:href="#g4" y="2142"/><use xlink:href="#g5" y="2159"/><rect x="16" y="2176" width="8" height="17" class="foreground"/><use xlink:href="#g6" y="2176"/></g><g><use xlink:href="#g1" y="3162"/><use xlink:href="#g2" y="3179"/><use xlink:href="#g4" y="3196"/><use xlink:href="#g5" y="3213"/><rect x="24" y="3230" width="8" height="17" class="foreground"/><use xlink:href="#g7" y="3230"/></g><g><use xlink:href="#g1" y="4216"/><use xlink:href="#g2" y="4233"/><use xlink:href="#g4" y="4250"/><use xlink:href="#g5" y="4267"/><rect x="32" y="4284" width="8" height="17" class="foreground"/><use xlink:href="#g8" y="4284"/></g><g><use xlink:href="#g1" y="5270"/><use xlink:href="#g2" y="5287"/><use xlink:href="#g4" y="5304"/><use xlink:href="#g5" y="5321"/><rect x="40" y="5338" width="8" height="17" class="foreground"/><use xlink:href="#g9" y="5338"/></g><g><use xlink:href="#g1" y="6324"/><use xlink:href="#g2" y="6341"/><use xlink:href="#g4" y="6358"/><use xlink:href="#g5" y="6375"/><rect x="48" y="6392" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="6392"/></g><g><use xlink:href="#g1" y="7378"/><use xlink:href="#g2" y="7395"/><use xlink:href="#g4" y="7412"/><use xlink:href="#g5" y="7429"/><rect x="56" y="7446" width="8" height="17" class="foreground"/><use xlink:href="#g11" y="7446"/></g><g><use xlink:href="#g1" y="8432"/><use xlink:href="#g2" y="8449"/><use xlink:href="#g4" y="8466"/><use xlink:href="#g5" y="8483"/><rect x="64" y="8500" width="8" height="17" class="foreground"/><use xlink:href="#g12" y="8500"/></g><g><use xlink:href="#g1" y="9486"/><use xlink:href="#g2" y="9503"/><use xlink:href="#g4" y="9520"/><use xlink:href="#g5" y="9537"/><rect x="520" y="9554" width="8" height="17" class="foreground"/><use xlink:href="#g13" y="9554"/></g><g><use xlink:href="#g1" y="10540"/><use xlink:href="#g2" y="10557"/><use xlink:href="#g4" y="10574"/><use xlink:href="#g5" y="10591"/><use xlink:href="#g14" y="10608"/><rect x="0" y="10625" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="10625"/></g><g><use xlink:href="#g1" y="11594"/><use xlink:href="#g2" y="11611"/><use xlink:href="#g4" y="11628"/><use xlink:href="#g5" y="11645"/><use xlink:href="#g14" y="11662"/><use xlink:href="#g15" y="11679"/><use xlink:href="#g16" y="11696"/><use xlink:href="#g17" y="11713"/><rect x="0" y="11730" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="11730"/></g><g><use xlink:href="#g1" y="12648"/><use xlink:href="#g2" y="12665"/><use xlink:href="#g4" y="12682"/><use xlink:href="#g5" y="12699"/><use xlink:href="#g14" y="12716"/><use xlink:href="#g15" y="12733"/><use xlink:href="#g16" y="12750"/><use xlink:href="#g17" y="12767"/><use xlink:href="#g18" y="12784"/><rect x="0" y="12801" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="12801"/></g><g><use xlink:href="#g1" y="13702"/><use xlink:href="#g2" y="13719"/><use xlink:href="#g4" y="13736"/><use xlink:href="#g5" y="13753"/><use xlink:href="#g14" y="13770"/><use xlink:href="#g15" y="13787"/><use xlink:href="#g16" y="13804"/><use xlink:href="#g17" y="13821"/><use xlink:href="#g18" y="13838"/><rect x="16" y="13855" width="8" height="17" class="foreground"/><use xlink:href="#g19" y="13855"/></g></g></svg>
-    <text id="timer" class="foreground">0:00/0:00</text>
-    <!-- Invisible, wider track to make frame seeking easier -->
-    <use xlink:href="#slider_wide_track" id="wide_track" class="background"/>
-    <!-- Visible track -->
-    <use xlink:href="#slider_track" id="track" class="foreground"/>
-    <use xlink:href="#slider_button" id="slider_1"/>
-    <use xlink:href="#icon-play" id="play-button" class="foreground"/>
-    <use xlink:href="#icon-pause" id="pause-button" class="foreground"/>
-    <script type="text/javascript" id="generated-js"><![CDATA[
-        var termtosvg_vars = {
-            transforms: [
-                {transform: 'translate3D(0, 0px, 0)', easing: 'steps(1, end)'},
-{transform: 'translate3D(0, -1054px, 0)', easing: 'steps(1, end)', offset: 0.000},
-{transform: 'translate3D(0, -2108px, 0)', easing: 'steps(1, end)', offset: 0.001},
-{transform: 'translate3D(0, -3162px, 0)', easing: 'steps(1, end)', offset: 0.213},
-{transform: 'translate3D(0, -4216px, 0)', easing: 'steps(1, end)', offset: 0.227},
-{transform: 'translate3D(0, -5270px, 0)', easing: 'steps(1, end)', offset: 0.251},
-{transform: 'translate3D(0, -6324px, 0)', easing: 'steps(1, end)', offset: 0.264},
-{transform: 'translate3D(0, -7378px, 0)', easing: 'steps(1, end)', offset: 0.270},
-{transform: 'translate3D(0, -8432px, 0)', easing: 'steps(1, end)', offset: 0.282},
-{transform: 'translate3D(0, -9486px, 0)', easing: 'steps(1, end)', offset: 0.418},
-{transform: 'translate3D(0, -10540px, 0)', easing: 'steps(1, end)', offset: 0.475},
-{transform: 'translate3D(0, -11594px, 0)', easing: 'steps(1, end)', offset: 0.476},
-{transform: 'translate3D(0, -12648px, 0)', easing: 'steps(1, end)', offset: 0.477},
-{transform: 'translate3D(0, -13702px, 0)', easing: 'steps(1, end)', offset: 0.893},
-{transform: 'translate3D(0, -13702px, 0)', easing: 'steps(1, end)'}
-            ],
-            timings: {
-                duration: 9384,
-                iterations: Infinity
-            }
-        };]]></script>
-    <script type="text/javascript">
-var animation = document.getElementById("screen_view").animate(
-    termtosvg_vars.transforms,
-    termtosvg_vars.timings
-)
-var terminal   = document.getElementById('terminal')
-var play_button = terminal.getElementById('play-button');
-var pause_button = terminal.getElementById('pause-button');
-var is_playing = true;
-
-animation.onfinish = function() {
-  play_button.setAttribute('display', 'inline')
-  pause_button.setAttribute('display', 'none')
-  is_playing = false;
-};
-
-function togglePlayPause() {
-    if (is_playing) {
-      animation.pause()
-      play_button.setAttribute('display', 'inline')
-      pause_button.setAttribute('display', 'none')
-      is_playing = false
-    } else {
-      animation.play()
-      play_button.setAttribute('display', 'none')
-      pause_button.setAttribute('display', 'inline')
-      is_playing = true
-    }
-};
-
-play_button.addEventListener('click', togglePlayPause, false)
-pause_button.addEventListener('click', togglePlayPause, false)
-
-
-var style = getComputedStyle(terminal);
-var animation_duration = termtosvg_vars.timings.duration / 1000
-var timer = terminal.getElementById('timer')
-
-function timer_from_seconds(t) {
-    minutes = Math.floor(t / 60);
-    seconds = Math.floor(t % 60);
-    return minutes + ':' + ("0" + seconds).slice(-2)
-}
-function update_timer() {
-    var current_time = (animation.currentTime / 1000) % animation_duration
-    timer.textContent =  timer_from_seconds(current_time) + "/" + timer_from_seconds(animation_duration)
-}
-setInterval(update_timer, "100ms")
-
-
-
-
-var slider_1  = terminal.getElementById('slider_1');
-function getTranslateX(elem) {
-  var style = window.getComputedStyle(elem);
-  var matrix = new WebKitCSSMatrix(style.webkitTransform);
-  return parseInt(matrix.m41)
-}
-
-var limitLower = parseInt(getTranslateX(terminal.getElementById('track')));
-var limitUpper = limitLower + parseInt(terminal.getElementById('track').getBoundingClientRect().width) - 8
-
-// Return X position for an event
-function mx(evt){
-    var pt = terminal.createSVGPoint();
-    pt.x = evt.clientX;
-    return pt.matrixTransform(terminal.getScreenCTM().inverse());
-}
-
-// Set the current time of the animation to get the slider button under the cursor
-var move = function(evt){
-    var cursor_position = mx(evt);
-    if ( cursor_position.x &lt; limitLower || cursor_position.x &gt; limitUpper ) {
-        return;
-    }
-    animation.currentTime = animation_duration * 1000 * (cursor_position.x - limitLower) / (limitUpper - limitLower)
-};
-
-// Move the slider button to the cursor position when a click happens on the track of the slider
-terminal.getElementById('wide_track').addEventListener('click', move, false);
-terminal.getElementById('track').addEventListener('click', move, false);
-
-// Enable slider button dragging along the track
-var dragging = false;
-slider_1.addEventListener('mousedown',function(evt){
-        if (is_playing) {
-            animation.pause()
-            play_button.setAttribute('display', 'inline')
-            pause_button.setAttribute('display', 'none')
-        }
-
-        dragging = true;
-        terminal.addEventListener('mousemove', move, false);
-        document.documentElement.addEventListener('mouseup', function(){
-                dragging = false;
-                if (is_playing) {
-                    animation.play()
-                    play_button.setAttribute('display', 'none')
-                    pause_button.setAttribute('display', 'inline')
-                }
-                terminal.removeEventListener('mousemove', move, false);
-        }, false);
-}, false);
-
-function update_slider_button() {
-    var current_time = (animation.currentTime / 1000) % animation_duration
-    var current_position = limitLower + (limitUpper - limitLower) * current_time / animation_duration
-    slider_1.setAttribute('x', parseInt(current_position)+'px')
-}
-
-setInterval(update_slider_button, "100ms")
-</script>
+    <svg id="screen" width="808" height="1037" x="23" y="50" viewBox="0 0 808 1037" preserveAspectRatio="xMidYMin slice"><rect class="background" height="100%" width="100%" x="0" y="0"/><defs><g id="g1"><text x="0" textLength="376" class="foreground">Welcome to fish, the friendly interactive shell</text></g><g id="g2"><text x="0" textLength="40" class="foreground">Type </text><text x="40" textLength="32" class="color2">help</text><text x="72" textLength="288" class="foreground"> for instructions on how to use fish</text></g><g id="g3"><text x="0" textLength="8" class="background"> </text></g><g id="g4"><text x="0" textLength="808" class="foreground">                                                                                                     </text></g><g id="g5"><text x="0" textLength="8" font-weight="bold" class="color14">~</text><text x="8" textLength="8" class="foreground"> </text></g><g id="g6"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="8" class="background"> </text><text x="24" textLength="784" class="foreground">                                                                                                  </text></g><g id="g7"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="16" class="foreground"> g</text><text x="24" textLength="8" class="background"> </text><text x="32" textLength="776" class="foreground">                                                                                                 </text></g><g id="g8"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="8" fill="#ff0000">g</text><text x="24" textLength="8" class="background">o</text><text x="32" textLength="488" fill="#555555">hash_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g9"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="16" fill="#ff0000">go</text><text x="32" textLength="8" class="background">h</text><text x="40" textLength="480" fill="#555555">ash_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g10"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="16" fill="#005fd7">go</text><text x="32" textLength="8" class="background">h</text><text x="40" textLength="480" fill="#555555">ash_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g11"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="24" fill="#005fd7">goh</text><text x="40" textLength="8" class="background">a</text><text x="48" textLength="472" fill="#555555">sh_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g12"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="24" fill="#ff0000">goh</text><text x="40" textLength="8" class="background">a</text><text x="48" textLength="472" fill="#555555">sh_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g13"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="32" fill="#ff0000">goha</text><text x="48" textLength="8" class="background">s</text><text x="56" textLength="464" fill="#555555">h_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g14"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="40" fill="#ff0000">gohas</text><text x="56" textLength="8" class="background">h</text><text x="64" textLength="456" fill="#555555">_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g15"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="504" fill="#ff0000">gohash_miner_simulator bitcoind -a "edgar_tool:pass123" -p 4000</text><text x="520" textLength="8" class="background"> </text><text x="528" textLength="280" class="foreground">                                   </text></g><g id="g16"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="176" fill="#005fd7">gohash_miner_simulator</text><text x="192" textLength="8" class="foreground"> </text><text x="200" textLength="64" text-decoration="underline" fill="#00afff">bitcoind</text><text x="264" textLength="8" class="foreground"> </text><text x="272" textLength="16" fill="#00afff">-a</text><text x="288" textLength="8" class="foreground"> </text><text x="296" textLength="160" fill="#999900">"edgar_tool:pass123"</text><text x="456" textLength="8" class="foreground"> </text><text x="464" textLength="16" fill="#00afff">-p</text><text x="480" textLength="8" class="foreground"> </text><text x="488" textLength="32" fill="#00afff">4000</text><text x="520" textLength="8" class="background"> </text><text x="528" textLength="280" class="foreground">                                   </text></g><g id="g17"><text x="0" textLength="8" font-weight="bold" class="color10">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="176" fill="#005fd7">gohash_miner_simulator</text><text x="192" textLength="8" class="foreground"> </text><text x="200" textLength="64" text-decoration="underline" fill="#00afff">bitcoind</text><text x="264" textLength="8" class="foreground"> </text><text x="272" textLength="16" fill="#00afff">-a</text><text x="288" textLength="8" class="foreground"> </text><text x="296" textLength="160" fill="#999900">"edgar_tool:pass123"</text><text x="456" textLength="8" class="foreground"> </text><text x="464" textLength="16" fill="#00afff">-p</text><text x="480" textLength="8" class="foreground"> </text><text x="488" textLength="32" fill="#00afff">4000</text><text x="520" textLength="288" class="foreground">                                    </text></g><g id="g18"><text x="0" textLength="120" class="foreground">bitcoind called</text></g><g id="g19"><text x="0" textLength="464" class="foreground">2022/05/12 21:02:35 Authentication string format is valid.</text></g><g id="g20"><text x="0" textLength="368" class="foreground">2022/05/12 21:02:35 Loading block templates...</text></g><g id="g21"><text x="0" textLength="400" class="foreground">2022/05/12 21:02:35 Starting server with port 4000</text></g><g id="g22"><text x="0" textLength="16" class="foreground">^C</text><text x="16" textLength="8" class="background"> </text></g><g id="g23"><text x="0" textLength="808" class="foreground">^C&#9166;                                                                                                  </text></g><g id="g24"><text x="0" textLength="8" class="background"> </text><text x="8" textLength="800" class="foreground">                                                                                                    </text></g><g id="g25"><text x="0" textLength="8" font-weight="bold" class="color14">~</text><text x="8" textLength="48" class="foreground"> took </text><text x="56" textLength="16" font-weight="bold" class="color11">9s</text><text x="72" textLength="8" class="foreground"> </text></g><g id="g26"><text x="0" textLength="8" font-weight="bold" class="color9">&#10095;</text><text x="8" textLength="8" class="foreground"> </text><text x="16" textLength="8" class="background"> </text><text x="24" textLength="784" class="foreground">                                                                                                  </text></g><g id="g27"><text x="0" textLength="8" font-weight="bold" class="color9">&#10095;</text><text x="8" textLength="800" class="foreground">                                                                                                    </text></g></defs><g id="screen_view"><g><use xlink:href="#g1" y="0"/><use xlink:href="#g2" y="17"/><rect x="0" y="34" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="34"/></g><g><use xlink:href="#g1" y="1054"/><use xlink:href="#g2" y="1071"/><rect x="0" y="1088" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="1088"/></g><g><use xlink:href="#g1" y="2108"/><use xlink:href="#g2" y="2125"/><rect x="0" y="2142" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="2142"/></g><g><use xlink:href="#g1" y="3162"/><use xlink:href="#g2" y="3179"/><use xlink:href="#g4" y="3196"/><use xlink:href="#g5" y="3213"/><rect x="16" y="3230" width="8" height="17" class="foreground"/><use xlink:href="#g6" y="3230"/></g><g><use xlink:href="#g1" y="4216"/><use xlink:href="#g2" y="4233"/><use xlink:href="#g4" y="4250"/><use xlink:href="#g5" y="4267"/><rect x="24" y="4284" width="8" height="17" class="foreground"/><use xlink:href="#g7" y="4284"/></g><g><use xlink:href="#g1" y="5270"/><use xlink:href="#g2" y="5287"/><use xlink:href="#g4" y="5304"/><use xlink:href="#g5" y="5321"/><rect x="24" y="5338" width="8" height="17" class="foreground"/><use xlink:href="#g8" y="5338"/></g><g><use xlink:href="#g1" y="6324"/><use xlink:href="#g2" y="6341"/><use xlink:href="#g4" y="6358"/><use xlink:href="#g5" y="6375"/><rect x="32" y="6392" width="8" height="17" class="foreground"/><use xlink:href="#g9" y="6392"/></g><g><use xlink:href="#g1" y="7378"/><use xlink:href="#g2" y="7395"/><use xlink:href="#g4" y="7412"/><use xlink:href="#g5" y="7429"/><rect x="32" y="7446" width="8" height="17" class="foreground"/><use xlink:href="#g10" y="7446"/></g><g><use xlink:href="#g1" y="8432"/><use xlink:href="#g2" y="8449"/><use xlink:href="#g4" y="8466"/><use xlink:href="#g5" y="8483"/><rect x="40" y="8500" width="8" height="17" class="foreground"/><use xlink:href="#g11" y="8500"/></g><g><use xlink:href="#g1" y="9486"/><use xlink:href="#g2" y="9503"/><use xlink:href="#g4" y="9520"/><use xlink:href="#g5" y="9537"/><rect x="40" y="9554" width="8" height="17" class="foreground"/><use xlink:href="#g12" y="9554"/></g><g><use xlink:href="#g1" y="10540"/><use xlink:href="#g2" y="10557"/><use xlink:href="#g4" y="10574"/><use xlink:href="#g5" y="10591"/><rect x="48" y="10608" width="8" height="17" class="foreground"/><use xlink:href="#g13" y="10608"/></g><g><use xlink:href="#g1" y="11594"/><use xlink:href="#g2" y="11611"/><use xlink:href="#g4" y="11628"/><use xlink:href="#g5" y="11645"/><rect x="56" y="11662" width="8" height="17" class="foreground"/><use xlink:href="#g14" y="11662"/></g><g><use xlink:href="#g1" y="12648"/><use xlink:href="#g2" y="12665"/><use xlink:href="#g4" y="12682"/><use xlink:href="#g5" y="12699"/><rect x="520" y="12716" width="8" height="17" class="foreground"/><use xlink:href="#g15" y="12716"/></g><g><use xlink:href="#g1" y="13702"/><use xlink:href="#g2" y="13719"/><use xlink:href="#g4" y="13736"/><use xlink:href="#g5" y="13753"/><rect x="520" y="13770" width="8" height="17" class="foreground"/><use xlink:href="#g16" y="13770"/></g><g><use xlink:href="#g1" y="14756"/><use xlink:href="#g2" y="14773"/><use xlink:href="#g4" y="14790"/><use xlink:href="#g5" y="14807"/><use xlink:href="#g17" y="14824"/><rect x="0" y="14841" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="14841"/></g><g><use xlink:href="#g1" y="15810"/><use xlink:href="#g2" y="15827"/><use xlink:href="#g4" y="15844"/><use xlink:href="#g5" y="15861"/><use xlink:href="#g17" y="15878"/><rect x="0" y="15895" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="15895"/></g><g><use xlink:href="#g1" y="16864"/><use xlink:href="#g2" y="16881"/><use xlink:href="#g4" y="16898"/><use xlink:href="#g5" y="16915"/><use xlink:href="#g17" y="16932"/><use xlink:href="#g18" y="16949"/><use xlink:href="#g19" y="16966"/><use xlink:href="#g20" y="16983"/><rect x="0" y="17000" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="17000"/></g><g><use xlink:href="#g1" y="17918"/><use xlink:href="#g2" y="17935"/><use xlink:href="#g4" y="17952"/><use xlink:href="#g5" y="17969"/><use xlink:href="#g17" y="17986"/><use xlink:href="#g18" y="18003"/><use xlink:href="#g19" y="18020"/><use xlink:href="#g20" y="18037"/><use xlink:href="#g21" y="18054"/><rect x="0" y="18071" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="18071"/></g><g><use xlink:href="#g1" y="18972"/><use xlink:href="#g2" y="18989"/><use xlink:href="#g4" y="19006"/><use xlink:href="#g5" y="19023"/><use xlink:href="#g17" y="19040"/><use xlink:href="#g18" y="19057"/><use xlink:href="#g19" y="19074"/><use xlink:href="#g20" y="19091"/><use xlink:href="#g21" y="19108"/><rect x="16" y="19125" width="8" height="17" class="foreground"/><use xlink:href="#g22" y="19125"/></g><g><use xlink:href="#g1" y="20026"/><use xlink:href="#g2" y="20043"/><use xlink:href="#g4" y="20060"/><use xlink:href="#g5" y="20077"/><use xlink:href="#g17" y="20094"/><use xlink:href="#g18" y="20111"/><use xlink:href="#g19" y="20128"/><use xlink:href="#g20" y="20145"/><use xlink:href="#g21" y="20162"/><use xlink:href="#g23" y="20179"/><rect x="0" y="20196" width="8" height="17" class="foreground"/><use xlink:href="#g24" y="20196"/></g><g><use xlink:href="#g1" y="21080"/><use xlink:href="#g2" y="21097"/><use xlink:href="#g4" y="21114"/><use xlink:href="#g5" y="21131"/><use xlink:href="#g17" y="21148"/><use xlink:href="#g18" y="21165"/><use xlink:href="#g19" y="21182"/><use xlink:href="#g20" y="21199"/><use xlink:href="#g21" y="21216"/><use xlink:href="#g23" y="21233"/><rect x="0" y="21250" width="8" height="17" class="foreground"/><use xlink:href="#g24" y="21250"/></g><g><use xlink:href="#g1" y="22134"/><use xlink:href="#g2" y="22151"/><use xlink:href="#g4" y="22168"/><use xlink:href="#g5" y="22185"/><use xlink:href="#g17" y="22202"/><use xlink:href="#g18" y="22219"/><use xlink:href="#g19" y="22236"/><use xlink:href="#g20" y="22253"/><use xlink:href="#g21" y="22270"/><use xlink:href="#g23" y="22287"/><use xlink:href="#g4" y="22304"/><use xlink:href="#g25" y="22321"/><rect x="16" y="22338" width="8" height="17" class="foreground"/><use xlink:href="#g26" y="22338"/></g><g><use xlink:href="#g1" y="23188"/><use xlink:href="#g2" y="23205"/><use xlink:href="#g4" y="23222"/><use xlink:href="#g5" y="23239"/><use xlink:href="#g17" y="23256"/><use xlink:href="#g18" y="23273"/><use xlink:href="#g19" y="23290"/><use xlink:href="#g20" y="23307"/><use xlink:href="#g21" y="23324"/><use xlink:href="#g23" y="23341"/><use xlink:href="#g4" y="23358"/><use xlink:href="#g25" y="23375"/><use xlink:href="#g27" y="23392"/><rect x="0" y="23409" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="23409"/></g><g><use xlink:href="#g1" y="24242"/><use xlink:href="#g2" y="24259"/><use xlink:href="#g4" y="24276"/><use xlink:href="#g5" y="24293"/><use xlink:href="#g17" y="24310"/><use xlink:href="#g18" y="24327"/><use xlink:href="#g19" y="24344"/><use xlink:href="#g20" y="24361"/><use xlink:href="#g21" y="24378"/><use xlink:href="#g23" y="24395"/><use xlink:href="#g4" y="24412"/><use xlink:href="#g25" y="24429"/><use xlink:href="#g27" y="24446"/><rect x="0" y="24463" width="8" height="17" class="foreground"/><use xlink:href="#g3" y="24463"/></g></g></svg>
 </svg>
